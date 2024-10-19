@@ -1,0 +1,10 @@
+1|What is the capital of France?|Berlin--Madrid--Paris--Rome|Paris
+2|What is the largest planet in our solar system?|Earth--Jupiter--Saturn--Mars|Jupiter
+3|Who wrote 'Hamlet'?|Charles Dickens--Mark Twain--William Shakespeare--J.K. Rowling|William Shakespeare
+4|What is the chemical symbol for water?|H2O--O2--CO2--NaCl|H2O
+5|Which element has the atomic number 1?|Oxygen--Hydrogen--Carbon--Nitrogen|Hydrogen
+6|What is the largest mammal in the world?|Elephant--Blue Whale--Giraffe--Great White Shark|Blue Whale
+7|What year did the Titanic sink?|1905--1912--1915--1920|1912
+8|What is the main ingredient in guacamole?|Tomato--Avocado--Onion--Pepper|Avocado
+9|Who painted the Mona Lisa?|Vincent Van Gogh--Pablo Picasso--Leonardo da Vinci--Claude Monet|Leonardo da Vinci
+10|What is the speed of light?|300,000 km/s--150,000 km/s--600,000 km/s--1,000,000 km/s|300,000 km/s
