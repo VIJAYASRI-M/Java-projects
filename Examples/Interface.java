@@ -4,6 +4,12 @@ package Examples;
 // class -> interface (implements)
 // interface -> interface (extends)
 
+// Types of Interface
+// -- Normal Interface (has two or more abstract methods)
+// -- Functional Interface <Single Abstraction Method(SAM)> (has only one abstract method)
+// -- Marker Interface (has no abstract method 
+//                      can be used in serializable use cases)
+
 interface InterfaceA{
     int age= 42; //they are default final static because 
     String name= "Vijayasri"; //they don't have memory
