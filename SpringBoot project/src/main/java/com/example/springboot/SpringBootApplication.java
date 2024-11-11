@@ -13,9 +13,9 @@ public class SpringBootApplication {
 		ApplicationContext context = SpringApplication.run(SpringBootApplication.class, args);
 
 		Student student = context.getBean(Student.class);
-		student.setName("Vijayasri");
-		student.setId(2);
-		student.setMarks(508);
+		student.setName("Divyabarathi");
+		student.setId(3);
+		student.setMarks(572);
 
 		StudentService service = context.getBean(StudentService.class);
 		service.add(student);
