@@ -1,41 +1,60 @@
 package com.example.mvc.controller;
 
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mvc.model.JobPost;
 import com.example.mvc.service.JobService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+
+@RestController
 public class JobController {
 
     @Autowired
-    JobService service;
+    private JobService service;
 
-    @RequestMapping({"/","/home"})
-    public String Home(){
-        return "home";
+    @GetMapping("jobPosts")
+    public List<JobPost> getAllJobs() {
+        return service.getAllJobs();
+
     }
 
-    @RequestMapping("/viewalljobs")
-    public String ViewAllJobs(Model ma){
-        ma.addAttribute("jobPosts",service.getAllJobs());
-        return "viewAllJobs";
+    @GetMapping("/jobPost/{postId}")
+    public JobPost getJob(@PathVariable int postId) {
+        return service.getJob(postId);
     }
 
-    @RequestMapping("/addjob")
-    public String AddJob(){
-        return "addJob";
-    }
-
-    @PostMapping("/handleForm")
-    public String handleFormSubmit(JobPost jobPost, Model model){
+    @PostMapping("jobPost")
+    public JobPost addJob(@RequestBody JobPost jobPost) {
         service.addJob(jobPost);
-        model.addAttribute("jobPost",jobPost);
+        return service.getJob(jobPost.getPostId());
+    }
+
+    @PutMapping("jobPost")
+    public JobPost updateJob(@RequestBody JobPost jobPost) {
+        service.updateJob(jobPost);
+        return service.getJob(jobPost.getPostId());
+    }
+
+    @DeleteMapping("jobPost/{postId}")
+    public String deleteJob(@PathVariable int postId)
+    {
+        service.deleteJob(postId);
+        return "Deleted";
+    }
+
+    @GetMapping("load")
+    public String loadData() {
+        service.load();
         return "success";
     }
-
 }
